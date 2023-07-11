@@ -1,0 +1,64 @@
+drop DATABASE db_kasir; CREATE database db_kasir
+
+-------------------------------------
+
+#DELETE SEMUA DATA PRODUK
+DELETE FROM `produk` WHERE 1;
+
+INSERT INTO `produk`(`kode_produk`, `nama_produk`, `harga_modal`, `harga_jual`, `stok`) VALUES 
+('obat-batuk','Obat Batuk','1000','2000','10'),
+('obat-pilek','Obat Pilek','2000','3000','20'),
+('obat-mencret','Obat Mencret','3000','4000','30'),
+('obat-pusing','Obat Pusing','4000','5000','40'),
+('obat-demam','Obat Demam','5000','6000','50'),
+('obat-pegal','Obat Pegal','6000','7000','60'),
+('obat-luka','Obat Luka','7000','8000','70'),
+('obat-keseleo','Obat Keseleo','8000','9000','80'),
+('obat-kesemutan','Obat Kesemutan','9000','10000','90'),
+('obat-radang','Obat Radang','10000','11000','100')
+
+----------------------------------------
+
+#DELETE SEMUA DATA EXPIRED
+DELETE FROM `expired` WHERE 1;
+
+INSERT INTO `expired`(`kode_produk`, `tgl_exp`) VALUES 
+('obat-batuk','2022-10-6'),
+('obat-pegal','2022-10-7'),
+('obat-demam','2022-10-8'),
+('obat-kesemutan','2022-10-9'),
+('obat-pusing','2022-10-10'),
+('obat-mencret','2022-10-11'),
+('obat-luka','2022-10-12'),
+('obat-keseleo','2022-10-13'),
+('obat-pilek','2022-10-14'),
+('obat-batuk','2022-10-15');
+
+INSERT INTO `expired`( `id`, `kode_produk`, `tgl`) VALUES 
+('1','obat-batuk','2022-10-6'),
+('2','obat-pegal','2022-10-7'),
+('3','obat-demam','2022-10-8'),
+('4','obat-kesemutan','2022-10-9'),
+('5','obat-pusing','2022-10-10'),
+('6', 'obat-mencret','2022-10-11'),
+('7', 'obat-luka','2022-10-12'),
+('8', 'obat-keseleo','2022-10-13'),
+('9', 'obat-pilek','2022-10-14'),
+('10', 'obat-batuk','2022-10-15');
+('11', 'obat-radang','2022-11-2');
+
+------------------------------------------
+#DELETE SEMUA DATA FAKTUR
+DELETE FROM `faktur` WHERE 1;
+
+INSERT INTO `faktur_beli`(`tgl`, `kode_produk`, `qty`, `expired`) VALUES 
+('2022-10-11','obat-batuk','1','2022-11-01'),
+('2022-10-11','obat-pegal','2','2022-11-02'),
+('2022-10-12','obat-demam','3','2022-11-03'),
+('2022-10-11','obat-kesemutan','4','2022-11-04'),
+('2022-10-14','obat-pusing','5','2022-11-05'),
+('2022-10-11','obat-mencret','6','2022-11-06'),
+('2022-10-11','obat-luka','7','2022-11-07'),
+('2022-10-10','obat-keseleo','8','2022-11-08'),
+('2022-10-11','obat-pilek','9','2022-11-09'),
+('2022-10-11','obat-radang','10','2022-11-10');
